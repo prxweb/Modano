@@ -106,17 +106,6 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:var(--weight-light);marg
   max-width:60ch;margin:0 auto;color:var(--warm-grey);
   font-size:var(--text-base);line-height:var(--leading-relaxed);
 }
-.rule{
-  width:34px;height:1px;background:var(--sage);margin:var(--space-md) auto 0;
-  position:relative;
-}
-.rule::before,.rule::after{
-  content:"";position:absolute;top:-2px;width:5px;height:5px;
-  background:var(--sage);transform:rotate(45deg);
-}
-.rule::before{left:-11px;}
-.rule::after{right:-11px;}
-
 /* buttons */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:var(--space-xs);
@@ -739,8 +728,11 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:var(--weight-light);marg
   display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:var(--space-xl);
   padding-bottom:var(--space-2xl);
 }
-.footer .brand__name{color:var(--white);}
-.footer .brand__sub{color:var(--sage-light);}
+/* footer brand lockup scaled 2x — diamond + wordmark only; every other footer element keeps its size */
+.footer .brand{gap:22px;}
+.footer .brand__mark{width:68px;}
+.footer .brand__name{color:var(--white);font-size:42px;}
+.footer .brand__sub{color:var(--sage-light);font-size:18px;margin-top:6px;}
 .footer__blurb{margin:var(--space-md) 0 var(--space-md);font-size:var(--text-sm);line-height:var(--leading-relaxed);max-width:34ch;}
 .footer h4{
   font-family:var(--font-body);font-size:var(--text-xs);letter-spacing:.16em;text-transform:uppercase;
@@ -798,8 +790,11 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:var(--weight-light);marg
     -webkit-overflow-scrolling:touch;scrollbar-width:none;
   }
   .strip__grid::-webkit-scrollbar{display:none;}
-  .strip__item{flex:0 0 50%;border-right:0;}
+  .strip__item{flex:0 0 50%;border-right:0;padding-top:6px;padding-bottom:6px;}
   .strip__item:nth-child(odd){scroll-snap-align:start;border-right:1px solid rgba(255,255,255,.08);}
+  /* the two-line label ("Repairs & custom work") sets the row height, so tighten type + gaps to keep the band shallow */
+  .strip__item h3{font-size:16px;line-height:1.2;margin-bottom:2px;}
+  .strip__item p{line-height:1.2;}
   .strip__dots{display:flex;}
   .story__badge{left:var(--space-md);bottom:-14px;}
 }
@@ -995,9 +990,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:var(--weight-light);marg
       <div class="section-head reveal">
         <p class="eyebrow" data-en="What we carry" data-fr="Ce que nous offrons">What we carry</p>
         <h2 class="h-section" data-en="Our collections" data-fr="Nos collections">Our collections</h2>
-        <p data-en="Pieces chosen and finished by hand — from certified diamond engagement rings to Italian gold chains and serviced luxury watches." data-fr="Des pièces choisies et finies à la main — des bagues de fiançailles en diamants certifiés aux chaînes en or italien, en passant par les montres de luxe entretenues chez nous.">Pieces chosen and finished by hand — from certified diamond engagement rings to Italian gold chains and serviced luxury watches.</p>
-        <span class="rule" aria-hidden="true"></span>
-      </div>
+        <p data-en="Pieces chosen and finished by hand — from certified diamond engagement rings to Italian gold chains and serviced luxury watches." data-fr="Des pièces choisies et finies à la main — des bagues de fiançailles en diamants certifiés aux chaînes en or italien, en passant par les montres de luxe entretenues chez nous.">Pieces chosen and finished by hand — from certified diamond engagement rings to Italian gold chains and serviced luxury watches.</p>      </div>
       <div class="collections__grid reveal">
         <a class="collection" href="#visit">
           <img src="images/rings-hero.jpg" alt="Diamond engagement rings in yellow and white gold" loading="lazy">
@@ -1047,9 +1040,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:var(--weight-light);marg
       <div class="section-head reveal">
         <p class="eyebrow eyebrow--light" data-en="At the bench" data-fr="À l'atelier">At the bench</p>
         <h2 class="h-section" data-en="In-store services" data-fr="Services en boutique">In-store services</h2>
-        <p data-en="Most work is done on site, by the same hands that sell the pieces. Bring it in and we'll tell you honestly what it needs." data-fr="La plupart des travaux sont réalisés sur place, par les mêmes mains qui vendent les pièces. Apportez-nous votre bijou : nous vous dirons honnêtement ce qu'il lui faut.">Most work is done on site, by the same hands that sell the pieces. Bring it in and we'll tell you honestly what it needs.</p>
-        <span class="rule" aria-hidden="true"></span>
-      </div>
+        <p data-en="Most work is done on site, by the same hands that sell the pieces. Bring it in and we'll tell you honestly what it needs." data-fr="La plupart des travaux sont réalisés sur place, par les mêmes mains qui vendent les pièces. Apportez-nous votre bijou : nous vous dirons honnêtement ce qu'il lui faut.">Most work is done on site, by the same hands that sell the pieces. Bring it in and we'll tell you honestly what it needs.</p>      </div>
 
       <div class="services__grid reveal">
         <article class="service service--tall">
@@ -1168,9 +1159,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:var(--weight-light);marg
       <div class="section-head reveal">
         <p class="eyebrow" data-en="From the counter" data-fr="Du comptoir">From the counter</p>
         <h2 class="h-section" data-en="Our work" data-fr="Nos réalisations">Our work</h2>
-        <p data-en="A few pieces and repairs that have passed through the shop." data-fr="Quelques pièces et réparations passées par la boutique.">A few pieces and repairs that have passed through the shop.</p>
-        <span class="rule" aria-hidden="true"></span>
-      </div>
+        <p data-en="A few pieces and repairs that have passed through the shop." data-fr="Quelques pièces et réparations passées par la boutique.">A few pieces and repairs that have passed through the shop.</p>      </div>
       <div class="gallery-grid reveal">
         <figure class="wide" tabindex="0" role="button" data-lightbox data-full="images/engagement-rings.jpg" aria-label="View larger: engagement diamond rings on 14K gold">
           <img src="images/engagement-rings.jpg" alt="A row of engagement diamond rings on 14K gold" loading="lazy">
