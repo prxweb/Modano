@@ -1,0 +1,9 @@
+{
+  "name": "modano-jewellery-site",
+  "private": true,
+  "description": "Bijouterie Modano Jewellery prospect sample site + standing tools (serve, screenshot, qa, prep-assets)",
+  "dependencies": {
+    "ffmpeg-static": "^5.3.0",
+    "sharp": "^0.33.5"
+  }
+}

@@ -1,0 +1,45 @@
+# Secrets
+.env
+
+# Working screenshot artifacts
+temporary screenshots/
+
+# Local dev server port file
+.devport
+
+# OS / editor
+Thumbs.db
+.DS_Store
+
+# Claude Code local settings
+.claude/
+
+# Internal build instructions (not for the public repo)
+CLAUDE.md
+
+# Internal brand data (not part of the deployed site)
+brand_assets/
+
+# Reference inputs (not part of the deliverable)
+www.bijouteriediplomate.com.png
+styles.rtf
+5StarsReviews.rtf
+
+# Raw client photos — the deployed site serves the optimized copies in images/
+kateryna-hliznitsova-ceSCZzjTReg-unsplash.jpg
+Modano_logo.png
+chain.PNG
+ring.PNG
+Diamond generic.jpg
+Diamond setting.jpg
+/interior.jpg
+ring2.jpg
+Ring3.jpg
+rings.jpg
+watch battery replacement.jpg
+watch.jpg
+watch2.jpg
+watch3.jpg
+
+# Dependencies
+node_modules/
